@@ -16,7 +16,7 @@ public interface CustomerRepository extends GraphRepository<Customer> {
     @Query("MATCH (c:Customer) WHERE ID(c) = {id} SET c._lock = 1")
     public void setSerializableLock(@Param("id") Long id);
 
-    @Query("MATCH (c:Csutomer) WHERE ID(c) = {id} REMOVE c._lock")
+    @Query("MATCH (c:Customer) WHERE ID(c) = {id} REMOVE c._lock")
     public void removeLock(@Param("id") Long id);
 
 }
